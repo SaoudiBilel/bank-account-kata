@@ -13,11 +13,13 @@ public class Operation {
     private Date operationDate;
     private double amount;
     private Type operationType;
+    private Double balance;
 
-    public Operation(Date operationDate, double amount, Type operationType) {
+    public Operation(Date operationDate, double amount, Type operationType, Double balance) {
         this.operationDate = operationDate;
         this.amount = amount;
         this.operationType = operationType;
+        this.balance = balance;
     }
 
     @Override
@@ -27,6 +29,7 @@ public class Operation {
                 ", operationDate=" + operationDate +
                 ", amount=" + amount +
                 ", operationType=" + operationType +
+                ", balance=" + balance +
                 '}';
     }
 }

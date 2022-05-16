@@ -27,8 +27,10 @@ public class BankAccountKataApplication implements CommandLineRunner {
         service.deposit(1L, 320.0);
         service.withdraw(1L, 0.62);
         service.withdraw(1L, 150.50);
+        service.withdraw(1L, 9700.0);
         service.deposit(1L, 15.0);
         service.seeHistory(1L);
+        service.printAccount(1L);
 
     }
 }

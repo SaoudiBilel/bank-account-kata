@@ -34,16 +34,16 @@ public class AccountServiceImpl implements AccountService{
         Account account = getAccount(accountCode);
         if(amount > 0){
             account.setBalance(account.getBalance() + amount);
-            operations.add(new Operation(new Random().nextLong(), new Date(), amount, Type.DEPOSIT));
+            operations.add(new Operation(new Random().nextLong(), new Date(), amount, Type.DEPOSIT, account.getBalance()));
         }
     }
 
     @Override
     public void withdraw(Long accountCode, Double amount) {
         Account account = getAccount(accountCode);
-        if(amount > 0){
+        if(0 < amount && amount <= account.getBalance()){
             account.setBalance(account.getBalance() - amount);
-            operations.add(new Operation(new Random().nextLong(), new Date(), amount, Type.WITHDRAW));
+            operations.add(new Operation(new Random().nextLong(), new Date(), amount, Type.WITHDRAW, account.getBalance()));
         }
     }
 
